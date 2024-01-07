@@ -14,7 +14,7 @@ COPY . .
 WORKDIR "/src/Shopping.Client"
 RUN dotnet build "Shopping.Client.csproj" -c Release -o /app/build
 
-# ------------- This Part is For Publishing Applications ----------------
+# ------------- This Part is For Publishing/Running Applications ----------------
 FROM build AS publish
 RUN dotnet publish "Shopping.Client.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
